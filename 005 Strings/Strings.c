@@ -6,14 +6,15 @@
 int main()
 {
     char string[N];
-
+    int len = 0;
     int i = 0;
 
     printf("Digite uma string: ");
-    gets(string); // le a string ate o caracter de nova linha
+    fgets(string, sizeof(string), stdin);
+    len = strlen(string);
     printf("string = %s\n", string);
 
-    printf("Sua string tem %li chars.\n", strlen(string));
+    printf("Sua string tem %i chars.\n", strlen(string));
 
     //Printa a string na vertical
     printf("A string fica assim na vertical: \n");
@@ -22,16 +23,21 @@ int main()
         printf("%c\n", string[i++]);
     }
 
+    printf("String ao contrário: ");
+    for(int i = len - 1; i >= 0; i--){
+        printf("%c", string[i]);
+    }
+    printf("\n\n");
+
     printf("A string na vertical, palavra por palavra, fica assim: ");
-    
     while (string[i] != '\0')
     {
         if(string[i++] != ' '){
-            putchar(string[i--]);
+            printf("%c", string[i--]);
             i++;
         }
         else{
-            putchar('\n');
+            printf("\n");
         }
     }
 
