@@ -7,7 +7,7 @@ int main()
 {
     char string[N];
     int len = 0;
-    int i = 0;
+    int i = 0, j = 0;
 
     printf("Digite uma string: ");
     fgets(string, sizeof(string), stdin);
@@ -29,15 +29,14 @@ int main()
     }
     printf("\n\n");
 
-    printf("A string na vertical, palavra por palavra, fica assim: ");
-    while (string[i] != '\0')
+    printf("A string na vertical, palavra por palavra, fica assim: \n");
+    while (string[j] != '\0')
     {
-        if(string[i++] != ' '){
-            printf("%c", string[i--]);
-            i++;
+        if(string[j++] != ' '){
+            putchar(string[j-1]);
         }
         else{
-            printf("\n");
+            putchar('\n');
         }
     }
 
