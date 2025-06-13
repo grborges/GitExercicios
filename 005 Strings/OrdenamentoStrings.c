@@ -19,6 +19,12 @@ int main()
         "goiaba"
 
     };
+
+    printf("Strings antes da ordenação:\n");
+    for(int i = 0; i < 10; i++)
+        printf("%s\n", strings[i]);
+    printf("\n");
+
     int len = 10; // Tamanho do array de strings
 
     char temp[100]; // Variável temporária para troca
@@ -41,10 +47,11 @@ int main()
         }
     }
 
+    printf("Strings após a ordenação:\n");
     for(int i = 0; i < len; i++)
         printf("%s\n", strings[i]);
     
     printf("\n");
-    
+
     return 0;
 }
